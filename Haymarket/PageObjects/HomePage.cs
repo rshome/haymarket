@@ -31,7 +31,7 @@ namespace Haymarket
 
         public void ClickSearch()
         {            
-            Reference.driver.FindElement(By.XPath("//*[@id='tab1']/form/div[2]/div[4]/span/input")).Click();
+            Reference.driver.FindElement(By.XPath("//*[@id='tab1']/form/div[2]/div[4]/span/input")).SendKeys(Keys.Enter);
         }
 
         public void BikesTab()
