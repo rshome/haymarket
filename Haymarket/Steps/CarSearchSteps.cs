@@ -48,6 +48,7 @@ namespace Haymarket.Steps
         [When(@"the Search button is clicked in the advert search widget")]
         public void WhenTheSearchButtonIsClickedInTheAdvertSearchWidget()
         {
+            Reference.WaitForPage();
             home.ClickSearch();
         }
         
@@ -55,9 +56,9 @@ namespace Haymarket.Steps
         public void ThenTheNumberOfAdvertSearchResultsIsGreaterThan(int p0)
         {
             Reference.WaitForPage();
-            String results = Reference.driver.FindElement(By.Id("search-numfound")).Text;
+            string results = Reference.driver.FindElement(By.Id("search-numfound")).Text;
 
-            int count = Convert.ToInt32(results);
+            double count = Convert.ToDouble(results);
 
             Assert.IsTrue(count > 0);            
         }

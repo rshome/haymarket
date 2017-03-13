@@ -22,19 +22,21 @@ namespace Haymarket
 
         public void SearchForModel(string model)
         {
+            Reference.driver.FindElement(By.Id("Car-ModelsDropdown")).Click();
+
             var modeldrop = Reference.driver.FindElement(By.Id("Car-ModelsDropdown"));
             SelectElement semodel = new SelectElement(modeldrop);
             semodel.SelectByText(model);
         }
 
         public void ClickSearch()
-        {
-            Reference.driver.FindElement(By.XPath("//*[@id='tab1']/form/div[2]/div[4]/span/input")).Click();          
+        {            
+            Reference.driver.FindElement(By.XPath("//*[@id='tab1']/form/div[2]/div[4]/span/input")).Click();
         }
 
         public void BikesTab()
         {
-            Reference.driver.FindElement(By.XPath("/html/body/div[2]/div[4]/div[3]/div[2]/div[1]/ul/li[2]/a")).Click();
+            Reference.driver.FindElement(By.ClassName("button button--primary")).Click();
         }
 
         public void SearchForBike(string bikemake)
