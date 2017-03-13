@@ -9,7 +9,7 @@ Scenario Outline: Display Correct Bike Advert
 	When the Bikes tab is selected in the advert search widget
 	And a bike make of <BikeMake> is selected in the advert search widget
 	And a max price of <Price> pounds is selected in the advert search widget
-	And the Search button is clicked in the advert search widget
+	And the Search button is clicked in the bike advert search widget
 	Then the number of advert search results is greater than 0
 	And the make <BikeMake> is selected in the Refine Your Search side panel
 

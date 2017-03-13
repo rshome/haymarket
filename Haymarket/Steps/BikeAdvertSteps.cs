@@ -20,7 +20,7 @@ namespace Haymarket
             homebike.BikesTab();            
         }
         
-        [When(@"a bike make of Ducati is selected in the advert search widget")]
+        [When(@"a bike make of (.*) is selected in the advert search widget")]
         public void WhenABikeMakeOfDucatiIsSelectedInTheAdvertSearchWidget(string bikemake)
         {
             Reference.WaitForPage();
@@ -33,13 +33,22 @@ namespace Haymarket
             Reference.WaitForPage();
             homebike.MaxBikePrice(price);
         }
-        
-        [Then(@"the make Ducati is selected in the Refine Your Search side panel")]
-        public void ThenTheMakeDucatiIsSelectedInTheRefineYourSearchSidePanel()
+
+        [When(@"the Search button is clicked in the bike advert search widget")]
+        public void WhenTheSearchButtonIsClickedInTheBikeAdvertSearchWidget()
+        {
+            Reference.WaitForPage();
+            homebike.ClickSearch();
+        }
+
+
+
+        [Then(@"the make (.*) is selected in the Refine Your Search side panel")]
+        public void ThenTheMakeDucatiIsSelectedInTheRefineYourSearchSidePanel(string ducati)
         {
             Reference.WaitForPage();
 
-            Assert.AreEqual("Ducati", Reference.driver.FindElement(By.Id("MakeDropdown")).Text);
+            Assert.AreEqual(ducati, Reference.driver.FindElement(By.Id("MakeDropdown")).Text);
         }
     }
 }

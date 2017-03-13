@@ -3,7 +3,6 @@ using TechTalk.SpecFlow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using Haymarket;
-using System.Threading;
 
 namespace Haymarket.Steps
 {
@@ -51,7 +50,6 @@ namespace Haymarket.Steps
         {
             Reference.WaitForPage();
             home.ClickSearch();
-            Thread.Sleep(5000);
         }
         
         [Then(@"the number of advert search results is greater than (.*)")]

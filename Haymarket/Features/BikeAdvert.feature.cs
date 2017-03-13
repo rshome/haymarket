@@ -88,7 +88,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 11
  testRunner.And(string.Format("a max price of {0} pounds is selected in the advert search widget", price), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
- testRunner.And("the Search button is clicked in the advert search widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the Search button is clicked in the bike advert search widget", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
  testRunner.Then("the number of advert search results is greater than 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line 14

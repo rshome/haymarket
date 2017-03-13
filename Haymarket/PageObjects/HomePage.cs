@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support;
 using OpenQA.Selenium.Support.UI;
+using System.Threading;
 
 namespace Haymarket
 {
@@ -30,17 +31,20 @@ namespace Haymarket
         }
 
         public void ClickSearch()
-        {            
+        {
+            Thread.Sleep(5000);
             Reference.driver.FindElement(By.XPath("//*[@id='tab1']/form/div[2]/div[4]/span/input")).SendKeys(Keys.Enter);
         }
 
         public void BikesTab()
         {
-            Reference.driver.FindElement(By.ClassName("button button--primary")).Click();
+            Reference.driver.FindElement(By.XPath("html/body/div/div[4]/div[3]/div[2]/div[1]/ul/li[2]/a")).Click();
         }
 
         public void SearchForBike(string bikemake)
         {
+            Reference.driver.FindElement(By.Id("Bike-MakesDropdown")).Click();
+
             var bikemodeldrop = Reference.driver.FindElement(By.Id("Bike-MakesDropdown"));
             SelectElement sebikemodel = new SelectElement(bikemodeldrop);
             sebikemodel.SelectByText(bikemake);
@@ -48,6 +52,8 @@ namespace Haymarket
 
         public void MaxBikePrice(string price)
         {
+            Reference.driver.FindElement(By.Id("Bike-MaxPrice")).Click();
+
             var bikepricedrop = Reference.driver.FindElement(By.Id("Bike-MaxPrice"));
             SelectElement sebikeprice = new SelectElement(bikepricedrop);
             sebikeprice.SelectByText(price);
