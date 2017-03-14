@@ -42,13 +42,11 @@ namespace Haymarket
         }
 
 
-
         [Then(@"the make (.*) is selected in the Refine Your Search side panel")]
         public void ThenTheMakeDucatiIsSelectedInTheRefineYourSearchSidePanel(string ducati)
         {
             Reference.WaitForPage();
             var Ctext = Reference.driver.FindElement(By.Id("MakeDropdown")).Text;
-
 
             Assert.AreEqual(ducati, Reference.driver.FindElement(By.Id("MakeDropdown")).Text);
         }
